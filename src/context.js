@@ -19,7 +19,7 @@ const reducer = (state, action) => {
       newContact.id = id;
       return {
         ...state,
-        contacts: [newContact, ...state.contacts]
+        contacts: [...state.contacts, newContact]
       };
     }
 
