@@ -11,6 +11,17 @@ const reducer = (state, action) => {
           contact => contact.id !== action.payload
         )
       };
+    case "ADD_CONTACT": {
+      let id = 0;
+      state.contacts.forEach(contact => id++);
+      id += 1;
+      const newContact = action.payload;
+      newContact.id = id;
+      return {
+        ...state,
+        contacts: [newContact, ...state.contacts]
+      };
+    }
 
     default:
       return state;
