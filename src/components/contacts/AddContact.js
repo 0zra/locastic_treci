@@ -87,6 +87,8 @@ class AddContact extends React.Component {
       name: "",
       errors: {}
     });
+
+    this.props.history.push("/");
   };
 
   render() {
