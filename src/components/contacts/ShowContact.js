@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Consumer } from "../../context";
+import { Link } from "react-router-dom";
 //import PropTypes from "prop-types";
 
 class ShowContact extends Component {
-  onDeleteClick = async (id, dispatch) => {
-    dispatch({ type: "DELETE_CONTACT", payload: id });
+  onDeleteClick = (id, dispatch) => {
+    dispatch({ type: "DELETE_CONTACT", payload: +id });
   };
   render() {
     const id = this.props.match.params.id;
@@ -41,11 +42,13 @@ class ShowContact extends Component {
             <div className="card card-body mb-3">
               <h4>
                 {name} {surname}{" "}
-                <i
-                  className="fas fa-times"
-                  style={{ cursor: "pointer", float: "right", color: "red" }}
-                  onClick={this.onDeleteClick.bind(this, id, dispatch)}
-                />
+                <Link to="/">
+                  <i
+                    className="fas fa-times"
+                    style={{ cursor: "pointer", float: "right", color: "red" }}
+                    onClick={this.onDeleteClick.bind(this, id, dispatch)}
+                  />
+                </Link>
               </h4>
 
               <ul className="list-group">

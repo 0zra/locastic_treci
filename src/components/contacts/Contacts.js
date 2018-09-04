@@ -11,9 +11,13 @@ class Contacts extends Component {
           return (
             <React.Fragment>
               <h1 className="display-4 mb-2">Contacts</h1>
-              {contacts.map(contact => (
-                <Contact key={contact.id} contact={contact} />
-              ))}
+              {contacts.map(contact => {
+                if (contact.id !== undefined) {
+                  return <Contact key={contact.id} contact={contact} />;
+                } else {
+                  return null;
+                }
+              })}
             </React.Fragment>
           );
         }}
