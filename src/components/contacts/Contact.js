@@ -8,7 +8,14 @@ class Contact extends Component {
     dispatch({ type: "DELETE_CONTACT", payload: id });
   };
   render() {
-    const { name, surname, id } = this.props.contact;
+    const {
+      name,
+      surname,
+      id,
+      city,
+      postal_code,
+      country
+    } = this.props.contact;
 
     return (
       <Consumer>
@@ -35,6 +42,9 @@ class Contact extends Component {
                   />
                 </Link>
               </h4>
+              <ul className="list-group">
+                <li className="list-group-item">{`${city} (${postal_code}), ${country}`}</li>
+              </ul>
             </div>
           );
         }}
