@@ -76,6 +76,17 @@ class AddContact extends React.Component {
     }
 
     dispatch({ type: "ADD_CONTACT", payload: this.state });
+    this.setState({
+      email: "",
+      phone: "",
+      city: "",
+      country: "",
+      postal_code: "",
+      adress: "",
+      surname: "",
+      name: "",
+      errors: {}
+    });
   };
 
   render() {
