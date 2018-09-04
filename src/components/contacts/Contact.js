@@ -19,9 +19,14 @@ class Contact extends Component {
     return (
       <div className="card card-body mb-3">
         <h4>
-          {name} {surname}
+          {name} {surname}{" "}
+          <i
+            onClick={() => alert("Ovo ce bit link za prikaz cilog kontakta")}
+            className="fas fa-plus"
+            style={{ cursor: "pointer", float: "right", color: "blue" }}
+          />
         </h4>
-
+        {/*
         <ul className="list-group">
           <li className="list-group-item">Adress:{adress}</li>
           <li className="list-group-item">Postal code:{postal_code}</li>
@@ -30,6 +35,7 @@ class Contact extends Component {
           <li className="list-group-item">Phone:{phone}</li>
           <li className="list-group-item">Email:{email}</li>
         </ul>
+        */}
       </div>
     );
   }
